@@ -1,0 +1,94 @@
+@media only screen and (max-width: 1350px) {
+    .projects-wrapper {
+        height: 1100px;
+        @include flex_center_column();
+
+        .projects-first-row {
+
+            .projects-box1-wrapper {
+                @include flex_center_column();
+
+                .container {
+                    width: 100%;
+                    background-image: url(../IMG/opacity-/img2dark.jpg);
+                    height: 30%;
+
+                    .container-h2 {}
+                }
+
+                .container .slider {
+                    display: none;
+                }
+
+                .container .slider .slide {}
+
+                .container .slider .slide.slide1 {}
+
+                .container .slider .slide.slide2 {}
+
+                .container .slider .slide.slide3 {}
+
+                .container .slider .slide.slide4 {}
+
+
+                .projects-box1-content {
+                    width: 100%;
+                    height: 70%;
+
+                    p {}
+                }
+            }
+        }
+
+        .projects-second-row {
+            @include flex_center_column();
+            height: 700px;
+
+            .projects-box2-wrapper {
+                width: 100%;
+                height: $box_height;
+                margin-bottom: $inner_margin;
+
+                .projects-box2 {
+                    float: none;
+
+                    .projects-box2-h3 {}
+
+                    .projects-box2-slide-up {
+
+
+                        .projects-box2-slide-up-text {}
+                    }
+                }
+
+                .projects-box2:hover .projects-box2-slide-up {}
+
+            }
+
+            .projects-box3-wrapper {
+                width: 100%;
+                height: $box_height;
+                margin-left: 0px;
+                overflow: hidden;
+
+                .projects-box3 {
+
+                    bo .projects-box3-h3 {}
+
+                    a {}
+
+                    a:hover {}
+
+                    a:not(:hover) {}
+
+                    p {}
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {}
+
+@media only screen and (max-width: 320px) {}

@@ -1,0 +1,8 @@
+.parallax {
+    height: $parallax_height;  
+    .parallax-image {
+        height: inherit;
+        background-image: url("../IMG/img2.jpg");
+        @include parallax();
+    }
+}

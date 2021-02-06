@@ -1,0 +1,231 @@
+/* Wrapper contains cover image and dimensions of projects section container */
+.projects-wrapper {
+    /* Background color */
+    background-color: $background_color_dark;
+
+    /* Dimensions */
+    height: $projects_height;
+
+    /* Flex */
+    @include flex_center_column();
+
+    /* Margins and padding */
+    padding-top: $projects_padding;
+    padding-bottom: $projects_padding;
+
+    /* Container of three divs */
+    .projects-first-row {
+
+        /* Includes outer margin into calculation of div width */
+        @include width_calc_outer_margin(100%);
+
+        .projects-box1-wrapper {
+            overflow: hidden;
+            height: $box_height;
+            //box-shadow: $box_shadow;
+            border: $border_main;
+            border-radius: $border_rad;
+            margin-bottom: $inner_margin;
+
+            .container {
+                position: relative;
+                width: 40%;
+                float: left;
+                height: inherit;
+                overflow: hidden;
+                display: flex;
+                @include flex_center_row();
+                @include no_user_select();
+
+                .container-h2 {
+                    font-size: $heading2_size;
+                    color: $text_color_light;
+                    letter-spacing: 1px;
+                    z-index: 100;
+                }
+            }
+
+            .container .slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 400%;
+                height: 100%;
+                animation: animate 15s linear infinite;
+            }
+
+            .container .slider .slide {
+                width: 25%;
+                height: 100%;
+                float: left;
+            }
+
+            .container .slider .slide.slide1 {
+                background: url("../IMG/opacity-/img1.jpg");
+                background-size: cover;
+            }
+
+            .container .slider .slide.slide2 {
+                background: url("../IMG/opacity-/img2dark.jpg");
+                background-size: cover;
+            }
+
+            .container .slider .slide.slide3 {
+                background: url("../IMG/opacity-/img3dark.jpg");
+                background-size: cover;
+            }
+
+            .container .slider .slide.slide4 {
+                background: url("../IMG/opacity-/img1.jpg");
+                background-size: cover;
+            }
+
+            @include slide_animate();
+
+            .projects-box1-content {
+                background-color: $background_color_light;
+                width: 60%;
+                float: right;
+                height: inherit;
+
+                p {
+                    padding: 40px;
+                    color: $text_color_dark;
+                    font-size: $paragraph_size;
+                }
+            }
+        }
+    }
+
+    .projects-second-row {
+        @include width_calc_outer_margin(100%);
+        @include flex_center_row();
+        height: $box_height;
+
+        .projects-box2-wrapper {
+            //box-shadow: $box_shadow;
+            border: $border_main;
+            border-radius: $border_rad;
+            height: inherit;
+            @include width_calc_inner_margin(60%);
+            background-image: url("../IMG/img5dark.jpg");
+            background-size: cover;
+
+            .projects-box2 {
+                position: relative;
+                overflow: hidden;
+                background-color: $pre_hover_overlay;
+                height: inherit;
+                width: 100%;
+                padding: 0;
+                @include flex_center_column();
+
+                .projects-box2-h3 {
+                    @include no_user_select();
+                    font-size: $heading2_size;
+                    color: $text_color_light;
+                }
+
+                .projects-box2-slide-up {
+                    overflow: hidden;
+                    position: absolute;
+                    background-color: $background_color_light;
+                    overflow: hidden;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    transition: .5s ease;
+                    padding: 0;
+
+                    .projects-box2-slide-up-text {
+                        text-align: justify;
+                        padding: 40px;
+                        color: $text_color_dark;
+                        font-size: $paragraph_size;
+                        position: absolute;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .projects-box2:hover .projects-box2-slide-up {
+                height: 100%;
+                transition: .5s ease;
+            }
+
+            @include hover_overlay(".projects-box2", $post_hover_overlay);
+        }
+
+        .projects-box3-wrapper {
+            position: relative;
+            float: right;
+            //box-shadow: $box_shadow;
+            border: $border_main;
+            border-radius: $border_rad;
+            height: inherit;
+            @include width_calc_inner_margin(60%);
+            width: 40%;
+            margin-left: $inner_margin;
+            background-image: url("../IMG/img8dark.jpg");
+            background-size: cover;
+
+            .projects-box3 {
+                background-color: $pre_hover_overlay;
+                overflow: hidden;
+                position: absolute;
+                width: 100%;
+                height: inherit;
+                padding: 0;
+                @include flex_center_column();
+
+                .projects-box3-h3 {
+                    @include no_user_select();
+                    font-size: $heading2_size;
+                    margin-bottom: 40px;
+                    color: $text_color_light;
+                }
+
+                a {
+                    @include no_user_select();
+                    width: 150px;
+                    padding: 10px;
+                    background-color: $background_color_dark;
+                    outline: none;
+                    text-align: center;
+                    border: $border_sub;
+                    border-radius: $border-rad;
+                    margin-top: 40px;
+                    text-decoration: none;
+                    color: $text_color_light;
+                    display: inline-block;
+                }
+
+                a:hover {
+                    transition: 0.5s;
+                    background-color: $background_color_light;
+                    color: $text_color_dark;
+                }
+
+                a:not(:hover) {
+                    transition: 0.5s;
+                }
+
+                p {
+                    color: $text_color_light;
+                    text-align: justify;
+                    text-align-last: center;
+                    padding-right: 70px;
+                    padding-left: 70px;
+                    word-spacing: 1px;
+                    line-height: 20px;
+                    font-size: $paragraph_size;
+                }
+            }
+
+            /* Hover effect for box3, type the class name between " " */
+            @include hover_overlay(".projects-box3", $post_hover_overlay);
+        }
+    }
+}

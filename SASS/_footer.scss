@@ -1,0 +1,13 @@
+/* FINISHED */
+.footer {
+    background-color: $background_color_dark;
+
+    .footer-text {
+        text-align: center;
+        font-family: $font1;
+        color: $text_color_light;
+        font-size: $paragraph_size;
+        border-top: 1px solid white;
+        padding: 20px;
+    }
+}

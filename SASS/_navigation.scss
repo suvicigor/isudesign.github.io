@@ -1,0 +1,91 @@
+.navigation {
+    /* Disables user select on navigation */
+    @include no_user_select;
+    min-height: 260px;
+
+    .navigation-wrapper {
+        /* Image settings */
+        background: url("../IMG/bnr.jpeg") repeat-y fixed;
+        background-size: cover;
+
+        /* Dimension settings */
+        height: $nav_height;
+
+        /* Center items vertically and horizontally mixin */
+        @include flex_center_column();
+
+        /* Container of page header */
+        .navigation-title {
+            /* Dimension settings */
+            margin-bottom: 40px;
+            margin-right: $nav_margin;
+
+            /* Text settings for h1 */
+            .navigation-title-a {
+                background-image: url("../IMG/logo.png");
+                background-size: cover;
+                display: block;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+            }
+
+            .navigation-title-a:after {
+                content: "";
+                position: absolute;
+                top: -65%;
+                left: -60%;
+                width: 20%;
+                height: 200%;
+                opacity: 0;
+                transform: rotate(45deg);
+                background: rgba(255, 255, 255, 0.13);
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0.13) 0%,
+                        rgba(255, 255, 255, 0.13) 77%,
+                        rgba(255, 255, 255, 0.5) 92%,
+                        rgba(255, 255, 255, 0.0) 100%);
+            }
+
+            .navigation-title-a:hover:after {
+                opacity: 1;
+                left: 130%;
+                transition-property: left, top, opacity;
+                transition-duration: 0.7s, 0.7s, 0.15s;
+                transition-timing-function: ease;
+            }
+
+            .navigation-title-a:active:after {
+                opacity: 0;
+                transition: 0.3s;
+            }
+        }
+
+        .navigation-anchors {
+            @include flex_center_row();
+
+            a {
+                padding: 7px 20px 7px 20px;
+                display: inline-block;
+                width: 80px;
+                text-align: center;
+                font-family: $font1;
+                color: $text_color_light;
+                border-bottom: $border_sub;
+                border-radius: $border_rad;
+                margin-right: $nav_margin;
+                background-color: $background_color_dark;
+            }
+
+            a:hover {
+                transition: 0.5s;
+                background-color: $background_color_light;
+                color: $text_color_dark;
+            }
+
+            a:not(:hover) {
+                transition: 0.5s;
+            }
+        }
+    }
+}

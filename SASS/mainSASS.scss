@@ -1,0 +1,33 @@
+/* Imports */
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "loader";
+@import "navigation";
+@import "projects";
+@import "parallax";
+@import "about";
+@import "footer";
+@import "responsive";
+/* Imports end */
+
+/* Universal page settings */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    touch-action: none;
+    text-decoration: none;
+    font-family: $font1;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Universal page settings end */
+::selection {
+    color: $text_color_light;
+    background: $background_color_dark;
+}
