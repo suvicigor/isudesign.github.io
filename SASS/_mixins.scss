@@ -1,46 +1,49 @@
-@mixin width_calc_inner_margin($percentage)
-{
+@mixin width_calc_inner_margin($percentage) {
     width: -moz-calc(#{$percentage} - #{$inner_margin});
     width: -webkit-calc(#{$percentage} - #{$inner_margin});
     width: -o-calc(#{$percentage} - #{$inner_margin});
     width: calc(#{$percentage} - #{$inner_margin});
 }
-@mixin width_calc_outer_margin($percentage)
-{
+
+@mixin width_calc_outer_margin($percentage) {
     width: -moz-calc(#{$percentage} - 2*#{$outer_margin});
     width: -webkit-calc(#{$percentage} - 2*#{$outer_margin});
     width: -o-calc(#{$percentage} - 2*#{$outer_margin});
     width: calc(#{$percentage} - 2*#{$outer_margin});
 }
-@mixin hover_overlay($class_name,$color)
-{
+
+@mixin hover_overlay($class_name, $color) {
     #{$class_name}:hover {
         transition: 0.5s;
         background-color: $color;
     }
+
     #{$class_name}:not(:hover) {
         transition: 0.5s;
     }
 }
-@mixin flex_center_row()
-{
+
+@mixin flex_center_row() {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
+
 @mixin flex_center_column() {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
 @mixin parallax() {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 @mixin no_user_select() {
     user-select: none;
     -moz-user-select: none;
@@ -48,14 +51,35 @@
     -ms-user-select: none;
     -o-user-select: none;
 }
+
 @mixin slide_animate() {
     @keyframes animate {
-        0% {left: 0;}
-        20% {left: 0;}
-        33.3333% {left: -100%;}
-        53% {left: -100%;}
-        66.6666% {left: -200%;}
-        86% {left: -200%;}
-        100% {left: -300%;}
+        0% {
+            left: 0;
+        }
+
+        20% {
+            left: 0;
+        }
+
+        33.3333% {
+            left: -100%;
+        }
+
+        53% {
+            left: -100%;
+        }
+
+        66.6666% {
+            left: -200%;
+        }
+
+        86% {
+            left: -200%;
+        }
+
+        100% {
+            left: -300%;
+        }
     }
 }

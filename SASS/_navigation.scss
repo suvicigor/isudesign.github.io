@@ -2,12 +2,15 @@
     /* Disables user select on navigation */
     @include no_user_select;
     min-height: 260px;
+    transition: all 0.5s;
+    z-index: 9999;
+    top: 0;
 
     .navigation-wrapper {
         /* Image settings */
         background: url("../IMG/bnr.jpeg") repeat-y fixed;
         background-size: cover;
-
+        transition: .5s;
         /* Dimension settings */
         height: $nav_height;
 
@@ -64,7 +67,12 @@
         .navigation-anchors {
             @include flex_center_row();
 
+            .extra-logo {
+                display: none;
+            }
+
             a {
+                cursor: pointer;
                 padding: 7px 20px 7px 20px;
                 display: inline-block;
                 width: 80px;
@@ -74,7 +82,7 @@
                 border-bottom: $border_sub;
                 border-radius: $border_rad;
                 margin-right: $nav_margin;
-                background-color: $background_color_dark;
+                background-color: $background_color_dark_ultra;
             }
 
             a:hover {
@@ -88,4 +96,65 @@
             }
         }
     }
+}
+
+.navigation-alt {
+    position: sticky;
+    top: 0;
+    @include no_user_select;
+    min-height: 100px;
+    background-color: $background_color_dark_ultra;
+    border-bottom: 2px solid white;
+    z-index: 9999;
+    transition: all 0.3s;
+
+    .navigation-wrapper-alt {
+
+        background-color: $background_color_dark_ultra;
+        z-index: 9999;
+        height: 100px;
+
+        .navigation-anchors-alt {
+            .extra-logo {
+                width: 40px;
+                height: 40px;
+                background-image: url("../IMG/logo_small.png");
+                background-size: contain;
+                margin-left: 40px;
+                margin-right: 40px;
+                display: block;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: inherit;
+
+            a {
+                cursor: pointer;
+                width: 120px;
+                text-decoration: none;
+                height: calc(100% + 1px);
+                text-align: center;
+                box-sizing: border-box;
+                line-height: 100px;
+                font-family: $font1;
+                color: $text_color_light;
+                background-color: $background_color_dark_ultra;
+            }
+
+            a:hover {
+                transition: 0.5s;
+                background-color: $background_color_light;
+                color: $text_color_dark;
+            }
+
+            a:not(:hover) {
+                transition: 0.5s;
+            }
+        }
+    }
+
+
+
 }

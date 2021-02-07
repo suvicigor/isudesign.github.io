@@ -1,12 +1,12 @@
 /* FINISHED */
 .footer {
-    background-color: $background_color_dark;
+    background-color: $background_color_dark_ultra;
 
     .footer-text {
         text-align: center;
         font-family: $font1;
         color: $text_color_light;
-        font-size: $paragraph_size;
+        font-size: 10px;
         border-top: 1px solid white;
         padding: 20px;
     }

@@ -14,20 +14,26 @@
     <link rel="preload" href="CSS/mainSASS.css" as="style">
     <link rel="stylesheet" type="text/css" href="CSS/mainSASS.css">
     <base target="_self">
-
+    <script src="JS/jquery-3.5.1.min.js"></script>
+    <script src="JS/navJS.js"></script>
+    <script src="JS/scrollJS.js"></script>
 </head>
 
 <body>
+    <div id="page_top"></div>
     <!-- Navigation -->
-    <section class="navigation">
-        <section class="navigation-wrapper">
-            <header class="navigation-title">
-                <a class="navigation-title-a" href="#"></a>
+    <section class="navigation" id="main_nav">
+        <section class="navigation-wrapper" id="main_wrap">
+            <header class="navigation-title" id="main_title">
+                <div class="navigation-title-a" id="main_a" href="#"></div>
             </header>
-            <nav class="navigation-anchors">
-                <a href="#projects-anchor">Projects</a>
-                <a href="#about-anchor">About me</a>
-                <a href="#contact-anchor">Contact</a>
+            <nav class="navigation-anchors" id="main_anchors">
+                <a id="top_anchor" onclick="document.getElementById('page_top').scrollIntoView();">Home</a>
+                <a id="main_projects" onclick="document.getElementById('projects-anchor').scrollIntoView();">Projects</a>
+                <div class="extra-logo"></div>
+                <!-- document.getElementById('about-anchor').scrollIntoView();  -->
+                <a id="main_about">About</a>
+                <a id="main_contact" onclick="document.getElementById('contact-anchor').scrollIntoView();">Contact</a>
             </nav>
         </section>
     </section>
@@ -47,7 +53,7 @@
                     </div>
                 </div>
                 <div class="projects-box1-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -56,7 +62,15 @@
                 <div class="projects-box2">
                     <h3 class="projects-box2-h3">Front end design</h3>
                     <div class="projects-box2-slide-up">
-                        <p class="projects-box2-slide-up-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <div class="projects-box2-slide-up-text-container">
+                            <p class="projects-box2-slide-up-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            </p>
+                        </div>
+                        <div class="projects-box2-button-container">
+                            <a class="projects-box2-button" href="#">
+                                <pre>All works             >></pre>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,8 +108,8 @@
     <!-- Parallax2 end -->
 
     <!-- Contact -->
-    <section id="contact-anchor" class="about">
-        <div class="about-card"></div>
+    <section id="contact-anchor" class="contact">
+        <div class="contact-card"></div>
     </section>
     <!-- Contact end -->
 
